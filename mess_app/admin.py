@@ -1,6 +1,8 @@
 from django.contrib import admin # type: ignore
 from django.contrib.auth.admin import UserAdmin # type: ignore
 from django.contrib import messages # type: ignore
+from django.db import models # type: ignore # FIX: Import models
+from django import forms # type: ignore # FIX: Import forms
 from .models import (
     User, FoodMenu, LeaveRequest, Bill, Feedback, LostAndFound, AdminNotification, MealRating
 )
@@ -29,6 +31,11 @@ class FoodMenuAdmin(admin.ModelAdmin):
     list_filter = ('day_of_week', 'meal_type')
     search_fields = ('menu_details',)
     list_editable = ('menu_details',) # Allow quick editing of menu details
+    
+    # FIX: Override the default Textarea for menu_details to reduce its size
+    formfield_overrides = {
+        models.TextField: {'widget': forms.Textarea(attrs={'rows': 2, 'cols': 40})},
+    }
     
     def save_model(self, request, obj, form, change):
         """
@@ -88,12 +95,15 @@ class BillAdmin(admin.ModelAdmin):
     list_display = ('student', 'month', 'total_amount', 'status', 'last_date_of_payment')
     list_filter = ('status', 'month')
     search_fields = ('student__username',)
-    # The calculated fields are read-only
-    readonly_fields = ('base_amount', 'adjustment_amount', 'total_amount')
-    # Make 'leave_days_approved' editable by admin
-    fields = ('student', 'month', 'base_rate_per_day', 'total_days_in_month', 
-              'leave_days_approved', 'last_date_of_payment', 'status', 
-              'base_amount', 'adjustment_amount', 'total_amount')
+    # FIX: The calculated fields AND leave_days_approved are read-only 
+    # as the model's save method now populates them automatically.
+    readonly_fields = ('base_amount', 'adjustment_amount', 'total_amount', 'leave_days_approved')
+    # Explicitly show all fields for administration
+    fields = (
+        'student', 'month', 'base_rate_per_day', 'total_days_in_month',
+        'leave_days_approved', 'last_date_of_payment', 'status',
+        'base_amount', 'adjustment_amount', 'total_amount'
+    )
 
 
 @admin.register(LostAndFound)

@@ -75,10 +75,9 @@ DATABASES = {
 # Password validation
 # ... (default validation settings)
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Asia/Kolkata' # Adjust to your local timezone
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
@@ -86,7 +85,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static", # Look for static files in the root 'static' folder
+    BASE_DIR / "static", 
 ]
 
 
@@ -105,14 +104,12 @@ AUTH_USER_MODEL = 'mess_app.User'
 LOGIN_URL = '/login/'
 # If you also want to redirect to the student dashboard after a successful login:
 LOGIN_REDIRECT_URL = '/student-dashboard/'
-# LOGIN_REDIRECT_URL = '/student-dashboard/'
-# LOGOUT_REDIRECT_URL = '/login/' 
-
-# 3. Twilio Settings (REPLACE WITH YOUR ACTUAL CREDENTIALS)
-TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', 'your_auth_token_here')
-# Use the Twilio Sandbox WhatsApp number or your approved number
-TWILIO_WHATSAPP_NUMBER = os.environ.get('TWILIO_WHATSAPP_NUMBER', 'whatsapp:+14155238886')
+ 
+# # 3. Twilio Settings (REPLACE WITH YOUR ACTUAL CREDENTIALS)
+# TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+# TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', 'your_auth_token_here')
+# # Use the Twilio Sandbox WhatsApp number or your approved number
+# TWILIO_WHATSAPP_NUMBER = os.environ.get('TWILIO_WHATSAPP_NUMBER', 'whatsapp:+14155238886')
 
 
 # --- Session Control Settings (FIX FOR RE-LOGIN ON REFRESH) ---
@@ -133,5 +130,4 @@ CSRF_COOKIE_SECURE = False
 # Ensure cookies work reliably on http://127.0.0.1
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
-# AGGRESSIVE FIX: Ensure the cookie is correctly issued for the local environment
 SESSION_COOKIE_DOMAIN = None

@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView # type: ignore
 from django.urls import reverse # type: ignore
 from django.db.models import Avg, Max # type: ignore
 from django.contrib import messages # type: ignore
-from django.http import JsonResponse, HttpResponse # <--- FIX: Ensure HttpResponse is available (though render uses it)
+from django.http import JsonResponse, HttpResponse 
 from django.views.decorators.cache import never_cache
 from datetime import date, datetime
 import calendar

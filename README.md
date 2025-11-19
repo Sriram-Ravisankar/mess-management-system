@@ -1,13 +1,11 @@
-🍽️ MessNet: web Based Mess Management System for Hostel Administration
+## 🍽️ MessNet: web Based Mess Management System for Hostel Administration
 
 MessNet is a web-based, all-in-one mess automation platform built using Django.
 It modernizes hostel mess workflows by allowing students to manage their menu, leave requests, bills, feedback, and lost & found through an elegant, user-friendly interface.
 
 The system also empowers administrators with full control over menu updates, leave approvals, billing, notifications, and more—all from a centralized backend.
 
-────────────────────────────────────────────────────────────
-
-🎨 Modern UI Experience
+## 🎨 Modern UI Experience
 
 MessNet ships with a clean, responsive UI featuring:
 
@@ -25,9 +23,8 @@ Toast-like feedback messages
 
 Feedback with 1–5 rating
 
-────────────────────────────────────────────────────────────
 
-✨ Core Features
+## ✨ Core Features
 👨‍🎓 Student Features
 
 ● Dashboard Overview
@@ -82,33 +79,30 @@ Feedback with 1–5 rating
 
 ● Manage student profiles
 
-────────────────────────────────────────────────────────────
 
-🧰 Technology Stack 
+## 🧰 Technology Stack 
 ● Backend
 
-   ○ Python
+   * [Python](https://www.python.org/)
 
-   ○ Django
-    (Web Framework)
+   * [Django](https://www.djangoproject.com/) (Web Framework)
 
-   ○ SQLite
-    (Database)
-
+   * [SQLite](https://www.sqlite.org/index.html) (Development Database)
+     
 ● Frontend
 
-   ○ Tailwind CSS
+   * [Tailwind CSS](https://tailwindcss.com/) (Styling)
 
-   ○ Lucide Icons
+   * [Lucide Icons](https://lucide.dev/)
 
-   ○ JavaScript (ES6)
+   * [JavaScript (ES6)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-   ○ HTML5
-    / CSS3
+   * [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)  
+   
+   * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-────────────────────────────────────────────────────────────
 
-🖼️ Screenshots
+## 🖼️ Screenshots
 
 Place screenshots inside a /screenshots folder.
 
@@ -136,20 +130,16 @@ Place screenshots inside a /screenshots folder.
 
 ![LostFound](screenshots/lostfound.png)
 
-────────────────────────────────────────────────────────────
 
-🚀 Getting Started
+## 🚀 Getting Started
 Prerequisites
 
-Python 3.10+
-
-Git
-
-pip
+* [Python 3.10+](https://www.python.org/downloads/)
+* [Git](https://git-scm.com/downloads/)
 
 🔧 Installation (Django Backend)
 1. Clone the Repository
-      git clone https://github.com/your-username/mess-management-system.git
+    ○ git clone https://github.com/your-username/mess-management-system.git
       cd mess-management-system
 
 2. Create & Activate Virtual Environment
